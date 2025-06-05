@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 24px;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .faq-item:hover {
+            background-color: #f5f5f5;
+        }
+
+        .answer {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        .google{
+            float: right;
+            margin-top: 0;
+            }
+           
+              
+.help-center {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    color: #4CAF50;
+    text-align: center;
+  }
+  
+  .section-title {
+    color: #4CAF50;
+    margin-bottom: 10px;
+  }
+  
+  .faq-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .faq-list li {
+    margin-bottom: 20px;
+  }
+  
+  .user-message {
+    width: 95%;
+    height: 100px;
+    padding: 10px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    resize: none;
+}
+
+.email-label {
+    margin-top: 10px;
+    display: block;
+}
+
+.email-input {
+    width: 95%;
+    padding: 10px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+  
+  
+  .confirmation-message {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+        }
+
+        .confirmation-message p {
+            margin: 0;}
+            .submit-button {
+                background-color: #4CAF50;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                transition: background-color 0.3s ease;
+            }
+            .submit-button:hover {
+                background-color: #45a049;
+            }
+
+  
+  
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const messageForm = document.getElementById("message-form");
+            const confirmationMessage = document.getElementById("confirmation-message");
+
+            messageForm.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent form submission
+                confirmationMessage.style.display = "block"; // Show confirmation message
+                messageForm.reset(); // Reset form fields
+            });
+        });
+
+        function toggleAnswer(id) {
+            var answer = document.getElementById(id);
+            answer.style.display = (answer.style.display === 'none') ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <a href="../index.html">
+            <img src="../Pages-inside/img/l3.png" alt="" style="width: 50px; height: 40px;">
+        </a>
+        Frequent Asked Question & Answers
+        <div>
+        
+             
+    </header>
+
+    <div class="google">
+        <div id="google_element"></div>
+        <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+        <script>
+          function loadGoogleTranslate(){
+            new google.translate.TranslateElement(
+                      'google_element' );
+          }
+          </script>
+          </div>
+        
+    <div class="faq-container">
+        <div class="faq-item" onclick="toggleAnswer('q1')">
+            <strong>Q: How do users book a trip on our website?</strong>
+            <div id="q1" class="answer">
+                A:  Users can easily book their trips by going to the "Book Now" section, entering their travel details, selecting preferences, and following the simple booking steps.
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleAnswer('q2')">
+            <strong>Q: What types of payments are accepted on our website?</strong>
+            <div id="q2" class="answer">
+                A:   We accept various payment methods such as credit/debit cards and secure online payment gateways. Users can choose their preferred option during the checkout process.
+            </div>
+        </div>
+        <div class="faq-item" onclick="toggleAnswer('q3')">
+            <strong>Q: Can users change or cancel their reservations ?</strong>
+            <div id="q3" class="answer">
+                A:  Yes, users can modify or cancel their reservations by logging into their accounts and accessing the booking details. It's important to check the specific cancellation policies.
+             </div> 
+        </div>
+        <div class="faq-item" onclick="toggleAnswer('q4')">
+            <strong>Q: Are there any hidden fees when booking ?</strong>
+            <div id="q4" class="answer">
+                A:   No, we believe in transparency. The total cost, including taxes and fees, is clearly displayed during the booking process. There are no hidden charges.
+            </div>
+        </div>
+        <div class="faq-item" onclick="toggleAnswer('q5')">
+            <strong>Q: How can users contact customer support if they encounter issues during their trip ?</strong>
+            <div id="q5" class="answer">
+                A:Users can contact our 24/7 customer support through our website's contact page, which provides email addresses and a helpline number for immediate assistance.
+            </div>
+        </div>
+        <div class="faq-item" onclick="toggleAnswer('q6')">
+            <strong>Q:Where can users find information on travel restrictions or advisories?</strong>
+            <div id="q6" class="answer">
+                A: Users can stay informed about travel restrictions by checking our website's dedicated section or referring to official government sources. We provide real-time information for better planning.
+            </div>
+        </div>
+        <div class="faq-item" onclick="toggleAnswer('q7')">
+            <strong>Q:Do users earn rewards or loyalty points for their bookings ?</strong>
+            <div id="q7" class="answer">
+                A: Yes, our loyalty program allows users to earn points with each booking. These points can be redeemed for discounts or future bookings, providing added benefits for our frequent travelers.           
+             </div>
+        </div>
+        <div class="faq-item" onclick="toggleAnswer('q8')">
+            <strong>Q:  How can users track their booking status and access their travel itinerary?</strong>
+            <div id="q8" class="answer">
+                A:  : Users can easily track their booking status and access their travel itinerary by logging into their accounts on our website. The itinerary details will be available for reference and download.        
+              </div>
+        </div>
+
+        <div class="message-box">
+            <h2 class="section-title">Still need help?</h2>
+            <form method="post"   action="faq.php">
+                <textarea class="user-message" id="user-message" placeholder="Type your message here..." name="question"></textarea>
+                <label for="email" class="email-label">Email Address:</label>
+                <input type="email" id="email" class="email-input"placeholder="Email" name="email" required>
+                <button class="submit-button" onclick="showConfirmation()">
+                    Submit
+                </button>
+            </form>
+              <div class="confirmation-message" id="confirmation-message">
+                <p>Thanks for submitting! We will get back to you soon. 🌟</p>
+            </div>
+            </form>
+          </div>
+        </div>
+        
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const messageForm = document.getElementById("message-form");
+          const confirmationMessage = document.getElementById("confirmation-message");
+      
+          messageForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            confirmationMessage.style.display = "block"; // Show confirmation message
+            messageForm.reset(); // Reset form fields
+            document.getElementById('confirmationPopup').style.display = 'block';
+        });
+
+        document.getElementById('closePopupBtn').addEventListener('click', function () {
+            // Close confirmation popup
+            document.getElementById('confirmationPopup').style.display = 'none';
+        });
+        });
+      </script> 
+
+    </div>
+
+    <script>
+        function toggleAnswer(id) {
+            var answer = document.getElementById(id);
+            answer.style.display = (answer.style.display === 'none') ? 'block' : 'none';
+        }
+    </script>
+   
+</body>
+</html>
+

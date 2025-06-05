@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggestion Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+        input[type="file"] {
+            margin-top: 5px;
+        }
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #45a049;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            color: #fff;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+        <div class="header-content">  <a href="../index.html">
+            <img src="../Pages-inside/img/logo99-removebg-preview.png" alt="">
+        </a>
+        <h1 style="font-family: Brush Script;color: rgb(30, 30, 31);" class="header-title"></h1>
+            
+        </div>
+    </header>
+
+
+<div class="container">
+    <style>
+        h2 {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+    <h2>SUGGEST NEW PLACES</h2>
+    <form method="post" action="suggest.php" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="placeName">Place Name:</label>
+            <input type="text" id="placeName" name="placeName" required>
+        </div>
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="placePhotos">Place Photos:</label><br>
+            <label for="place2">Place 1:</label>
+            <input type="file" id="place1" name="place1"><br>
+            <label for="place2">Place 2:</label>
+            <input type="file" id="place2" name="place2"><br>
+            <label for="place3">Place 3:</label>
+            <input type="file" id="place3" name="place3"><br><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+        </div>
+    </form>
+</div>
+
+<div class="popup" id="popup">
+    <p>We will look after this suggested place.</p>
+</div>
+
+<script>
+    document.getElementById("suggestionForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        document.getElementById("popup").style.display = "block";
+        setTimeout(function() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("suggestionForm").reset();
+        }, 2000);
+    });
+</script>
+
+</body>
+</html>
